@@ -25,7 +25,7 @@
 </mat-toolbar>
 <mat-sidenav-container autosize="true">
     <mat-sidenav [ngClass]="!isCollapsed ? 'expanded' : ''" [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
-      <mat-nav-list>
+      <mat-nav-list (click)="toggleMenu()">
         <a mat-list-item [routerLink]="'/'">
           <span class="entry">
             <i class="fa-solid fa-plus" style="font-size: 20px;"></i>
