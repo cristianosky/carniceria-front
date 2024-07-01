@@ -8,7 +8,6 @@
 .listado-producto {
     width: 75%;
     height: 100%;
-    background-color: red;
 }
 
 .factura {
@@ -16,3 +15,94 @@
     height: 100%;
     background-color: blue;
 }
+
+.container-factura {
+    width: 100%;
+    margin-top: 9px;
+    padding-bottom: 15px;
+}
+
+.header-serch {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+ 
+.swal2-toast .swal2-title {
+    color: #fff;
+}
+
+.swal2-toast .swal2-popup {
+  background-color: #28a745;
+}
+
+.serch {
+    width: 100%;
+}
+
+.container-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+    justify-content: space-evenly;
+}
+
+.container-botones {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-botones .botones {
+    width: 100%;
+    border-radius: 0px;
+}´
+
+.container-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+    justify-content: space-evenly;
+}
+
+
+@media (max-width: 600px) {
+    .header-serch {
+        flex-direction: column;
+    }
+
+    .botones {
+        width: 100%;
+    }
+
+    .serch {
+        width: 100%;
+    }
+
+    .botones {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .listado-producto {
+        width: 100%;
+    }
+
+    .factura {
+        width: 100%;
+    }
+}
+
