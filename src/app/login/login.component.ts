@@ -10,6 +10,7 @@ import { ServiceLoginService } from '../services/login/service-login.service';
 export class LoginComponent  implements OnInit {
   isLoading: boolean = false;
   formLogin: FormGroup;
+  hide = true;
   
   constructor(private fb: FormBuilder, private _serviceLogin: ServiceLoginService) {
     this.formLogin = this.fb.group({
