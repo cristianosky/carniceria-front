@@ -1,0 +1,18 @@
+.containerLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+    background-color: #f5f5f5;
+}
+
+.cardClass {
+    max-width: 30%;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .cardClass {
+        max-width: 90%;
+    }
+}

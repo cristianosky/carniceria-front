@@ -1,0 +1,33 @@
+<div class="containerLogin">
+  <mat-card class="cardClass">
+    <mat-card-header style="display: flex; justify-content: center;">
+      <mat-card-title>Iniciar sessión</mat-card-title>
+      <mat-card-subtitle>Ingrese sus credenciales</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="formLogin">
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="usuario" placeholder="Administrador">
+          <mat-error *ngIf="usuario?.hasError('required')">
+            El usuario es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="contrasena" placeholder="********">
+          <mat-error *ngIf="contrasena?.hasError('required')">
+            La contraseña es obligatoria.
+          </mat-error>
+        </mat-form-field>
+      </form>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: end;">
+      <button mat-raised-button color="primary" [disabled]="isLoading || formLogin.invalid" (click)="login()">Ingresar</button>
+    </mat-card-actions>
+    <mat-card-footer *ngIf="isLoading">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</div>
