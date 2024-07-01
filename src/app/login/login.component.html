@@ -24,6 +24,8 @@
           </mat-error>
         </mat-form-field>
       </form>
+      <!-- mensaje de error -->
+      <mat-error *ngIf="mensajeError" style="color: red;">{{mensajeError}}</mat-error>
       <mat-divider></mat-divider>
     </mat-card-content>
     <mat-card-actions style="display: flex; justify-content: end;">

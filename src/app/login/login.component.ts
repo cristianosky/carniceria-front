@@ -11,6 +11,7 @@ export class LoginComponent  implements OnInit {
   isLoading: boolean = false;
   formLogin: FormGroup;
   hide = true;
+  mensajeError: string|null = null;
   
   constructor(private fb: FormBuilder, private _serviceLogin: ServiceLoginService) {
     this.formLogin = this.fb.group({
@@ -39,7 +40,8 @@ export class LoginComponent  implements OnInit {
         this.isLoading = false;
         window.location.href = '/';
       }, (error) => {
-        console.error(error);
+        console.error(error.error.error);
+        this.mensajeError = error.error.error;
         this.isLoading = false;
       });
     }
