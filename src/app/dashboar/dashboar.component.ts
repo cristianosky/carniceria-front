@@ -38,8 +38,7 @@ export class DashboarComponent {
   }
 
   logout() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    localStorage.clear();
     window.location.href = 'login';
   }
 }

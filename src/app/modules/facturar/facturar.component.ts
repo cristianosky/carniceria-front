@@ -141,7 +141,7 @@ export class FacturarComponent implements OnInit {
           if(res.deleteVenta){
             localStorage.removeItem('factura');
             this.factura = null;
-            this.toggleDiv();
+            this.isDivVisible = false;
           }
           this.factura.total_venta = this.productosFactura.reduce((acc, producto) => acc + producto.subtotal, 0);
           localStorage.setItem('factura', JSON.stringify(this.factura));
@@ -190,7 +190,7 @@ export class FacturarComponent implements OnInit {
       localStorage.removeItem('factura');
       this.factura = null;
       this.productosFactura = [];
-      this.toggleDiv();
+      this.isDivVisible = false;
     }, (err) => {
       console.error(err);
       Swal.fire(
