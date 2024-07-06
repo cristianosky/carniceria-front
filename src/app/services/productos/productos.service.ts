@@ -44,4 +44,20 @@ export class ProductosService {
   deleteInventario(id: number) {
     return this._appService.getQuery(`inventario/${id}`, 'delete');
   }
+
+  addDetalleVenta(detalleVenta: any) {
+    return this._appService.getQuery('addDetalleVenta', 'post', detalleVenta);
+  }
+
+  getDetalleFactura(id_ventas: any) {
+    return this._appService.getQuery(`detalleVenta/${id_ventas}`, 'get');
+  }
+
+  eliminarDetalleVenta(id_ventas: any) {
+    return this._appService.getQuery(`detalleVenta/${id_ventas}`, 'delete');
+  }
+
+  pagarVenta(id_ventas: any) {
+    return this._appService.getQuery(`pagarVenta/${id_ventas}`, 'put');
+  }
 }

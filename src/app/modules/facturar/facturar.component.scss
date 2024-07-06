@@ -13,7 +13,6 @@
 .factura {
     width: 25%;
     height: 100%;
-    background-color: blue;
 }
 
 .container-factura {
@@ -75,6 +74,55 @@
     justify-content: space-evenly;
 }
 
+.floating-div {
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 16px !important;
+    border-radius: 8px;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    width: 84%;
+    height: 76%;
+    padding: 5px;
+}
+  
+.boton-flotante {
+    display: none;
+    position: fixed; 
+    right: 17px; 
+    bottom: 12px;
+}
+
+.cuerpo-factura {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    border: #3f51b5 3px solid;
+    border-radius: 5px;
+}
+
+.cuerpo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: #3f51b5 3px solid;
+    background-color: #3f51b52e;
+    padding: 8px;
+}
+
+.footer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-top: #3f51b5 3px solid;
+    padding: 8px;
+}
 
 @media (max-width: 600px) {
     .header-serch {
@@ -103,6 +151,14 @@
 
     .factura {
         width: 100%;
+    }
+
+    .boton-flotante {
+        display: block;
+    }
+
+    .factura {
+        display: none;
     }
 }
 
