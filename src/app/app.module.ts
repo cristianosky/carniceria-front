@@ -13,8 +13,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ListFacturaComponent } from './modules/list-factura/list-factura.component';
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -4,7 +4,7 @@
     <div class="cuerpo-factura" *ngIf="factura">
         <div class="cuerpo-header">
             <p style="margin: 0px;">Fecha: {{ fecha | date }}</p>
-            <p style="margin: 0px;">Factura Nro: #<span style="font-weight: 600;">{{factura.id_venta}}</span></p>
+            <p style="margin: 0px;">Factura Nro: #<span style="font-weight: 600;">{{factura?.id_venta}}</span></p>
         </div>
         <div style="height: 100%;">
             <div class="container-item">
@@ -28,7 +28,7 @@
         </div>
         <div class="footer-header">
             <p style="margin: 0px;">Total:</p>
-            <p style="margin: 0px; font-weight: 600;">{{ factura.total_venta | currency:'':'symbol':'1.0' }}</p>
+            <p style="margin: 0px; font-weight: 600;">{{ factura.total_venta ? factura.total_venta : 0 | currency:'':'symbol':'1.0' }}</p>
             <p style="margin: 0px;">
                 <button mat-raised-button color="primary" (click)="pagarVenta()">Pagar</button>
             </p>

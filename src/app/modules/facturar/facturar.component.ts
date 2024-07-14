@@ -14,7 +14,7 @@ export class FacturarComponent implements OnInit {
   busqueda: FormControl = new FormControl('', [Validators.maxLength(50)]);
   isDivVisible:boolean = false;
   fecha = new Date();
-  factura: any = JSON.parse(localStorage.getItem('factura') || '{}')  || null;
+  factura: any = JSON.parse(localStorage.getItem('factura') || '{}');
   productosFactura: any[] = [];
 
   constructor(private _ProductService: ProductosService) {
@@ -140,7 +140,7 @@ export class FacturarComponent implements OnInit {
           this.productosFactura = this.productosFactura.filter((producto: any) => producto.id_detalle != detalle.id_detalle);
           if(res.deleteVenta){
             localStorage.removeItem('factura');
-            this.factura = null;
+            this.factura = {};
             this.isDivVisible = false;
           }
           this.factura.total_venta = this.productosFactura.reduce((acc, producto) => acc + producto.subtotal, 0);
@@ -188,7 +188,7 @@ export class FacturarComponent implements OnInit {
         }
       });
       localStorage.removeItem('factura');
-      this.factura = null;
+      this.factura = {};
       this.productosFactura = [];
       this.isDivVisible = false;
     }, (err) => {

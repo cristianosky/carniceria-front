@@ -8,15 +8,26 @@ const routes: Routes = [
 
   { path: '', 
     canActivate: [AuthGuard], 
-    component: DashboarComponent, title: 'Dashboard',
+    component: DashboarComponent,
     children: [
+      {
+        path: '',
+        loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+      },
       { 
-        path: '', 
-        loadChildren: () => import('./modules/facturar/facturar.module').then(m => m.FacturarModule)
+        path: 'facturar', 
+        loadChildren: () => import('./modules/facturar/facturar.module').then(m => m.FacturarModule),
+        title: 'Facturar'
       },
       {
-        path: 'listar',
-        loadChildren: () => import('./modules/list-factura/list-factura.module').then(m => m.ListFacturaModule),
+        path: 'inventario',
+        loadChildren: () => import('./modules/inventario/inventario.module').then(m => m.InventarioModule),
+        title: 'Inventario'
+      },
+      {
+        path: 'producto',
+        loadChildren: () => import('./modules/producto/producto.module').then(m => m.ProductoModule),
+        title: 'Producto'
       }
     ]
   },
